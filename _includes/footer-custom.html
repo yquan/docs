@@ -1,8 +1,9 @@
 <style>
   .highlight,
   figure.highlight,
+  .highlighter-rouge,
   pre.highlight,
-  pre:has(> code) {
+  pre.code-block-copy {
     position: relative;
   }
 
@@ -56,15 +57,24 @@
     return Promise.resolve();
   }
 
-  function attachCopyButton(block) {
-    var pre = block.matches("pre") ? block : block.querySelector("pre");
-    if (!pre || block.querySelector(".copy-code-button")) return;
+  function codeBlockHost(pre) {
+    return (
+      pre.closest(".highlighter-rouge, figure.highlight, div.highlight") || pre
+    );
+  }
 
-    var host = block.matches("pre") ? block.parentElement : block;
-    if (!host) return;
+  function attachCopyButton(pre) {
+    if (!pre || pre.closest("pre") !== pre) return;
+
+    var host = codeBlockHost(pre);
+    if (host.getAttribute("data-copy-attached") === "true") return;
+    host.setAttribute("data-copy-attached", "true");
 
     if (getComputedStyle(host).position === "static") {
       host.style.position = "relative";
+    }
+    if (host === pre) {
+      pre.classList.add("code-block-copy");
     }
 
     var btn = document.createElement("button");
@@ -96,11 +106,6 @@
     });
   }
 
-  document
-    .querySelectorAll("div.highlight, figure.highlight, pre.highlight")
-    .forEach(attachCopyButton);
-  document.querySelectorAll("pre > code").forEach(function (code) {
-    attachCopyButton(code.parentElement);
-  });
+  document.querySelectorAll("pre").forEach(attachCopyButton);
 })();
 </script>
