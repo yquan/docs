@@ -1,6 +1,6 @@
 ---
-
-## title: Upgrade Portainer (Docker)
+title: Upgrade Portainer (Docker)
+---
 
 # Upgrade Portainer on Docker (Ubuntu server)
 
@@ -81,8 +81,6 @@ docker run -d \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
 ```
-
-
 
 ## 4. Verify
 

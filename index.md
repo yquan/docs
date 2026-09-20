@@ -8,4 +8,4 @@ Notes and runbooks.
 
 ## Guides
 
-- [Upgrade Portainer (Docker)](portainer-upgrade.html)
+- [Upgrade Portainer (Docker)]({{ "/portainer-upgrade.html" | relative_url }})

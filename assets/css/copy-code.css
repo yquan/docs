@@ -1,0 +1,39 @@
+.highlight,
+figure.highlight,
+.highlighter-rouge,
+pre.highlight,
+pre.code-block-copy {
+  position: relative;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  z-index: 1;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.copy-code-button:hover {
+  opacity: 1;
+}
+
+.copy-code-button--success {
+  border-color: #2da44e;
+  color: #1a7f37;
+}
+
+@media (prefers-color-scheme: dark) {
+  .copy-code-button {
+    background: rgba(30, 30, 30, 0.92);
+    border-color: rgba(200, 200, 200, 0.35);
+  }
+}
