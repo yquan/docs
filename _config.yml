@@ -1,9 +1,12 @@
 title: YQ Docs
 description: Placeholder site for GitHub Pages.
 
-# Required so GitHub Pages loads _includes/footer-custom.html and head-custom.html
-theme: jekyll-theme-minima
-
 # Project site: https://yquan.github.io/docs/
 url: https://yquan.github.io
 baseurl: /docs
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
