@@ -6,6 +6,6 @@ title: Home
 
 Notes and runbooks.
 
-## Guides
+## TOC
 
 - [Upgrade Portainer (Docker)]({{ "/portainer-upgrade.html" | relative_url }})
